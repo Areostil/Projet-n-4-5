@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+
+		<style>
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			/* The Modal (background) */
+			.modal {
+				--bs-modal-zindex: 1055;
+				--bs-modal-width: 500px;
+				--bs-modal-padding: 1rem;
+				--bs-modal-margin: 0.5rem;
+				--bs-modal-bg: #fff;
+				--bs-modal-border-color: var(--bs-border-color-translucent);
+				--bs-modal-border-width: 1px;
+				--bs-modal-border-radius: 0.5rem;
+				--bs-modal-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+				--bs-modal-inner-border-radius: calc(0.5rem - 1px);
+				display: none; /* Hidden by default */
+				position: fixed; /* Stay in place */
+				z-index: 1; /* Sit on top */
+				padding-top: 100px; /* Location of the box */
+				left: 0;
+				top: 0;
+				--bs-modal-header-border-color: var(--bs-border-color);
+				--bs-modal-header-border-width: 1px;
+				--bs-modal-title-line-height: 1.5;
+				--bs-modal-footer-gap: 0.5rem;
+				--bs-modal-footer-border-color: var(--bs-border-color);
+				--bs-modal-footer-border-width: 1px;
+			}
+
+			/* Modal Content */
+			.modal-content {
+				background-color: rgba(62, 61, 61, 0.2);
+				margin: auto;
+				padding: 20px;
+				border: 1px solid #888;
+				width: 80%;
+			}
+
+			/* The Close Button */
+			.close {
+				opacity: 0.75;
+				marging: 50rem;
+				color: #000;
+				float: right;
+				font-size: 28px;
+				font-weight: bold;
+			}
+
+			.close:hover,
+			.close:focus {
+				color: #000;
+				text-decoration: none;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Trigger/Open The Modal -->
+		<button id="myBtn">Contacter nous</button>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div class="container position-relative">
+					<div class="row d-flex justify-content-center">
+						<div
+							class="col-md-8 col-lg-6 col-xl-5 col-xxl-4"
+							style="padding-right: 0px; padding-left: 0px"
+						>
+							<div class="card mb-5" style="background: var(--bs-card-cap-bg)">
+								<div class="card-body p-sm-5">
+									<h2 class="text-center mb-4" style="color: rgb(0, 0, 0)">
+										Nous contacter
+									</h2>
+									<form method="post">
+										<!-- Start: Success Example -->
+										<div class="mb-3">
+											<input
+												class="form-control autocomplete=&quot;off&quot;"
+												type="text"
+												id="name-2"
+												name="name"
+												placeholder="Nom"
+											/>
+										</div>
+										<!-- End: Success Example -->
+										<!-- Start: Error Example -->
+										<div class="mb-3">
+											<input
+												class="form-control autocomplete=&quot;off&quot;"
+												type="email"
+												id="email-2"
+												name="email"
+												placeholder="Email"
+											/>
+										</div>
+										<!-- End: Error Example -->
+										<div class="mb-3">
+											<textarea
+												class="form-control autocomplete=&quot;off&quot;"
+												id="message-2"
+												name="message"
+												rows="6"
+												placeholder="Message"
+											></textarea>
+										</div>
+										<div>
+											<button
+												class="btn d-block w-100"
+												type="submit"
+												style="
+													background: #181918;
+													--bs-primary: #0d6efd;
+													--bs-primary-rgb: 13, 110, 253;
+													color: rgb(255, 255, 255);
+												"
+											>
+												Envoyer
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Get the modal
+			var modal = document.getElementById('myModal');
+
+			// Get the button that opens the modal
+			var btn = document.getElementById('myBtn');
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName('close')[0];
+
+			// When the user clicks the button, open the modal
+			btn.onclick = function () {
+				modal.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function () {
+				modal.style.display = 'none';
+			};
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.style.display = 'none';
+				}
+			};
+		</script>
+	</body>
+
+	form.addEventListener('submit', (e) => { e.preventDefault(); checkInputs();//rajouter fonction
+	verif toute données qui appelle checkinputs }); function checkInputs() { // trim to remove the
+	whitespaces const usernameValue = username.value.trim(); const emailValue = email.value.trim();
+	const messageValue = message.value.trim(); if (usernameValue === '') { setErrorFor(username, 'Le
+	nom ne peut pas être vide'); } else { setSuccessFor(username); } if (emailValue === '') {
+	setErrorFor(email, "L'email ne peut pas être vide"); } else if (!isEmail(emailValue)) {
+	setErrorFor(email, "L'email n'est pas valide'"); } else { setSuccessFor(email); } if
+	(messageValue === '') { setErrorFor(message, 'Le message ne peut pas être vide'); } else {
+	setSuccessFor(message); } } function setErrorFor(input, message) { const formControl =
+	input.parentElement; const small = formControl.querySelector('small'); formControl.className =
+	'.error'; small.innerText = message; } function setSuccessFor(input) { const formControl =
+	input.parentElement; formControl.className = 'success'; alert('Votre message a bien été
+	envoyé'); } function isEmail(email) { return
+	/^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/.test(
+	email ); }
+</html>
